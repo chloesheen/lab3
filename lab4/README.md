@@ -1,3 +1,4 @@
+##### Sujin Kay, Chloe Sheen, Lamiaa Dakir, Matthew Soulanille, Katherine Wu
 # HARDWARE
 There are 2 keyboards (labeled as 1 and 2), as well as 2 Terminals on the Main screen. Rather than opting for a memory-mapped design, we created two new opcodes, one to read a character from a terminal and another to write a character to a display. For the putchar operation, our opcode is represented by bits 10-15 as 001010; for getchar, these bits are 001011. Bits 4-7 determine which register to read to decide which keyboard / display to use and bits 0-3 determine which register to read a character from / write a character to.
 
