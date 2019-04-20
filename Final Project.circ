@@ -57,8 +57,15 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </tool>
-    <tool lib="1" name="NOT Gate"/>
-    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="NOT Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="20"/>
+    </tool>
+    <tool lib="1" name="AND Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </tool>
     <tool lib="1" name="OR Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
@@ -368,6 +375,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(720,480)" name="Constant">
       <a name="facing" val="west"/>
     </comp>
+    <comp lib="6" loc="(1016,233)" name="Text">
+      <a name="text" val="R2 holds interrupt type"/>
+    </comp>
     <comp lib="6" loc="(270,344)" name="Text">
       <a name="text" val="Control"/>
     </comp>
@@ -387,6 +397,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(840,280)" name="Probe">
       <a name="facing" val="west"/>
       <a name="radix" val="16"/>
+    </comp>
+    <comp lib="6" loc="(980,248)" name="Text">
+      <a name="text" val="Interrupt program stored in 0180"/>
     </comp>
     <comp lib="0" loc="(960,380)" name="Probe">
       <a name="facing" val="west"/>
@@ -478,9 +491,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="6" loc="(636,252)" name="Text">
       <a name="text" val="Operation"/>
     </comp>
-    <comp lib="6" loc="(1237,273)" name="Text">
-      <a name="text" val="R2 holds interrupt type"/>
-    </comp>
     <comp lib="6" loc="(938,288)" name="Text">
       <a name="text" val="R8"/>
     </comp>
@@ -491,16 +501,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="addrWidth" val="16"/>
       <a name="dataWidth" val="16"/>
       <a name="contents">addr/data: 16 16
-e101 f100 ed36 fd00 20cd 3068 b020 eb0d
-fb00 1c0b ed39 fd00 20cd e100 f100 ed36
-fd00 20cd 3068 b020 eb00 fb00 180b e40a
-f400 3068 b024 eb28 fb00 180b e400 f4d0
-4304 3380 a543 6205 6304 eb00 fb00 100b
-e100 f100 e200 f2d0 ed3c fd00 20cd e200
-f2d0 6002 eb00 fb00 100b 0 2c12 21cd
-0 2812 21cd 0 99c0 9ad0 9320 4403
-eb4d fb00 180b 3380 4203 3380 ed39 fd00
-20cd 34c0 eb44 fb00 190b 219a
+eb07 fb00 100b e341 f300 2803 2300 eb07
+fb00 100b
 </a>
     </comp>
     <comp lib="6" loc="(943,536)" name="Text">
@@ -2036,6 +2038,9 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <comp lib="0" loc="(520,410)" name="Constant">
       <a name="facing" val="north"/>
     </comp>
+    <comp lib="6" loc="(404,480)" name="Text">
+      <a name="text" val="Problem: when we return from interrupt, this latch stays on so it doesn't stop and then start the next immediate interrupt"/>
+    </comp>
   </circuit>
   <circuit name="Shadow Registers">
     <a name="circuit" val="Shadow Registers"/>
@@ -2244,7 +2249,9 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <comp loc="(230,210)" name="Start Interrupt?">
       <a name="label" val="SWI"/>
     </comp>
-    <comp lib="4" loc="(390,210)" name="S-R Flip-Flop"/>
+    <comp lib="4" loc="(390,210)" name="S-R Flip-Flop">
+      <a name="trigger" val="falling"/>
+    </comp>
     <comp lib="4" loc="(560,100)" name="Register">
       <a name="width" val="16"/>
     </comp>
@@ -2525,9 +2532,9 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(310,980)" to="(310,1050)"/>
     <wire from="(320,830)" to="(320,900)"/>
     <wire from="(490,410)" to="(540,410)"/>
+    <wire from="(1030,660)" to="(1030,730)"/>
     <wire from="(320,1040)" to="(370,1040)"/>
     <wire from="(320,480)" to="(370,480)"/>
-    <wire from="(1120,480)" to="(1120,510)"/>
     <wire from="(480,490)" to="(480,700)"/>
     <wire from="(260,80)" to="(260,740)"/>
     <wire from="(320,80)" to="(320,110)"/>
@@ -2552,6 +2559,7 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(910,480)" to="(910,490)"/>
     <wire from="(490,500)" to="(490,770)"/>
     <wire from="(320,690)" to="(370,690)"/>
+    <wire from="(1140,630)" to="(1140,660)"/>
     <wire from="(910,490)" to="(950,490)"/>
     <wire from="(830,160)" to="(830,180)"/>
     <wire from="(450,420)" to="(450,450)"/>
@@ -2559,7 +2567,7 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(930,740)" to="(930,760)"/>
     <wire from="(290,210)" to="(290,300)"/>
     <wire from="(760,170)" to="(760,190)"/>
-    <wire from="(1150,490)" to="(1150,730)"/>
+    <wire from="(1040,470)" to="(1120,470)"/>
     <wire from="(620,80)" to="(620,570)"/>
     <wire from="(310,120)" to="(310,160)"/>
     <wire from="(800,230)" to="(830,230)"/>
@@ -2567,8 +2575,6 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(290,440)" to="(370,440)"/>
     <wire from="(290,1000)" to="(370,1000)"/>
     <wire from="(220,300)" to="(290,300)"/>
-    <wire from="(1130,730)" to="(1150,730)"/>
-    <wire from="(1120,480)" to="(1140,480)"/>
     <wire from="(300,780)" to="(370,780)"/>
     <wire from="(300,60)" to="(370,60)"/>
     <wire from="(530,540)" to="(540,540)"/>
@@ -2581,9 +2587,7 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(300,990)" to="(300,1060)"/>
     <wire from="(310,840)" to="(310,910)"/>
     <wire from="(480,490)" to="(540,490)"/>
-    <wire from="(970,730)" to="(1090,730)"/>
     <wire from="(400,420)" to="(450,420)"/>
-    <wire from="(1080,470)" to="(1120,470)"/>
     <wire from="(320,180)" to="(370,180)"/>
     <wire from="(320,340)" to="(370,340)"/>
     <wire from="(320,900)" to="(370,900)"/>
@@ -2623,7 +2627,6 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(460,470)" to="(540,470)"/>
     <wire from="(400,1050)" to="(530,1050)"/>
     <wire from="(820,450)" to="(830,450)"/>
-    <wire from="(1100,640)" to="(1120,640)"/>
     <wire from="(300,640)" to="(370,640)"/>
     <wire from="(930,460)" to="(1010,460)"/>
     <wire from="(310,420)" to="(370,420)"/>
@@ -2650,6 +2653,7 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(610,160)" to="(610,510)"/>
     <wire from="(400,840)" to="(500,840)"/>
     <wire from="(970,760)" to="(1080,760)"/>
+    <wire from="(1030,660)" to="(1140,660)"/>
     <wire from="(500,390)" to="(540,390)"/>
     <wire from="(760,240)" to="(760,260)"/>
     <wire from="(400,770)" to="(490,770)"/>
@@ -2680,6 +2684,7 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(490,500)" to="(540,500)"/>
     <wire from="(320,410)" to="(370,410)"/>
     <wire from="(320,970)" to="(370,970)"/>
+    <wire from="(970,730)" to="(1030,730)"/>
     <wire from="(830,200)" to="(830,230)"/>
     <wire from="(690,150)" to="(730,150)"/>
     <wire from="(450,460)" to="(450,490)"/>
@@ -2689,6 +2694,7 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(600,80)" to="(620,80)"/>
     <wire from="(290,720)" to="(370,720)"/>
     <wire from="(400,190)" to="(480,190)"/>
+    <wire from="(1160,690)" to="(1160,730)"/>
     <wire from="(400,280)" to="(470,280)"/>
     <wire from="(470,430)" to="(540,430)"/>
     <wire from="(300,500)" to="(370,500)"/>
@@ -2703,11 +2709,9 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(310,560)" to="(310,630)"/>
     <wire from="(320,970)" to="(320,1040)"/>
     <wire from="(320,410)" to="(320,480)"/>
-    <wire from="(1080,510)" to="(1120,510)"/>
     <wire from="(320,620)" to="(370,620)"/>
     <wire from="(550,80)" to="(550,150)"/>
     <wire from="(310,160)" to="(610,160)"/>
-    <wire from="(1040,470)" to="(1080,470)"/>
     <wire from="(1120,460)" to="(1120,470)"/>
     <wire from="(590,90)" to="(590,110)"/>
     <wire from="(460,470)" to="(460,560)"/>
@@ -2716,6 +2720,7 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(520,530)" to="(540,530)"/>
     <wire from="(300,200)" to="(300,240)"/>
     <wire from="(800,160)" to="(830,160)"/>
+    <wire from="(1130,730)" to="(1160,730)"/>
     <wire from="(290,930)" to="(370,930)"/>
     <wire from="(290,210)" to="(370,210)"/>
     <wire from="(290,370)" to="(370,370)"/>
@@ -2735,39 +2740,32 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <wire from="(320,110)" to="(370,110)"/>
     <wire from="(320,270)" to="(370,270)"/>
     <wire from="(320,830)" to="(370,830)"/>
+    <wire from="(1030,730)" to="(1090,730)"/>
     <wire from="(730,150)" to="(730,220)"/>
+    <wire from="(1160,630)" to="(1160,660)"/>
     <wire from="(470,480)" to="(470,630)"/>
     <wire from="(320,80)" to="(550,80)"/>
     <wire from="(400,120)" to="(490,120)"/>
     <wire from="(1080,750)" to="(1090,750)"/>
     <wire from="(1060,810)" to="(1070,810)"/>
+    <wire from="(1130,480)" to="(1140,480)"/>
     <wire from="(730,220)" to="(760,220)"/>
     <wire from="(290,580)" to="(370,580)"/>
     <wire from="(630,240)" to="(630,430)"/>
     <wire from="(930,760)" to="(940,760)"/>
-    <wire from="(1080,470)" to="(1080,510)"/>
     <wire from="(1120,460)" to="(1140,460)"/>
     <wire from="(300,200)" to="(370,200)"/>
     <wire from="(300,360)" to="(370,360)"/>
     <wire from="(300,920)" to="(370,920)"/>
-    <comp loc="(970,760)" name="Return from Interrupt?"/>
-    <comp lib="0" loc="(820,450)" name="Constant">
-      <a name="width" val="16"/>
-    </comp>
-    <comp lib="6" loc="(1004,643)" name="Text">
-      <a name="text" val="Interrupt PC Value"/>
-    </comp>
+    <wire from="(1150,490)" to="(1150,600)"/>
     <comp lib="6" loc="(722,126)" name="Text">
       <a name="text" val="Branch or not?"/>
     </comp>
-    <comp loc="(400,910)" name="BNS/BNSR">
-      <a name="label" val="BNS/BNSR"/>
-    </comp>
-    <comp lib="6" loc="(581,56)" name="Text">
-      <a name="text" val="Flag Conditions"/>
-    </comp>
     <comp lib="6" loc="(1019,435)" name="Text">
       <a name="text" val="Call/Return?"/>
+    </comp>
+    <comp lib="6" loc="(1114,509)" name="Text">
+      <a name="text" val="Interrupt PC Value"/>
     </comp>
     <comp lib="6" loc="(865,409)" name="Text">
       <a name="text" val="Otherwise, PC = PC+1"/>
@@ -2776,9 +2774,6 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
       <a name="width" val="16"/>
       <a name="group" val="4"/>
     </comp>
-    <comp lib="0" loc="(760,260)" name="Constant">
-      <a name="width" val="4"/>
-    </comp>
     <comp lib="0" loc="(190,590)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val=" CALL/RETURN? "/>
@@ -2786,9 +2781,67 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <comp lib="2" loc="(1170,470)" name="Multiplexer">
       <a name="width" val="16"/>
     </comp>
-    <comp lib="0" loc="(1100,640)" name="Constant">
+    <comp lib="4" loc="(1130,730)" name="S-R Flip-Flop"/>
+    <comp loc="(400,280)" name="BLE/BLER">
+      <a name="label" val="BLE/BLER"/>
+    </comp>
+    <comp loc="(400,190)" name="BGE/BGER">
+      <a name="label" val="BGE/BGER"/>
+    </comp>
+    <comp lib="2" loc="(930,460)" name="Multiplexer">
       <a name="width" val="16"/>
-      <a name="value" val="0xffff"/>
+    </comp>
+    <comp loc="(400,420)" name="BULE/BULER">
+      <a name="label" val="BULE/BULER"/>
+    </comp>
+    <comp lib="1" loc="(900,190)" name="OR Gate"/>
+    <comp loc="(400,630)" name="BNZ/BNZR">
+      <a name="label" val="BNZ/BNZR"/>
+    </comp>
+    <comp loc="(400,50)" name="BR/BRR (Unconditional Branch)">
+      <a name="label" val="BR/BRR"/>
+    </comp>
+    <comp lib="3" loc="(870,440)" name="Adder">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="1" loc="(1160,660)" name="NOT Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(230,160)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Contents of Rb "/>
+    </comp>
+    <comp lib="0" loc="(230,80)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Op Code "/>
+    </comp>
+    <comp lib="0" loc="(590,110)" name="Constant">
+      <a name="width" val="2"/>
+      <a name="value" val="0x2"/>
+    </comp>
+    <comp lib="0" loc="(680,190)" name="Constant">
+      <a name="width" val="2"/>
+      <a name="value" val="0x3"/>
+    </comp>
+    <comp lib="1" loc="(1150,600)" name="AND Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp loc="(970,760)" name="Return from Interrupt?"/>
+    <comp lib="0" loc="(820,450)" name="Constant">
+      <a name="width" val="16"/>
+    </comp>
+    <comp loc="(400,910)" name="BNS/BNSR">
+      <a name="label" val="BNS/BNSR"/>
+    </comp>
+    <comp lib="6" loc="(581,56)" name="Text">
+      <a name="text" val="Flag Conditions"/>
+    </comp>
+    <comp lib="0" loc="(760,260)" name="Constant">
+      <a name="width" val="4"/>
     </comp>
     <comp loc="(400,1050)" name="BNV/BNVR">
       <a name="label" val="BNV/BNVR"/>
@@ -2800,21 +2853,11 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
       <a name="label" val=" New Value of PC"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="4" loc="(1130,730)" name="S-R Flip-Flop"/>
-    <comp loc="(400,280)" name="BLE/BLER">
-      <a name="label" val="BLE/BLER"/>
-    </comp>
     <comp loc="(400,490)" name="BUG/BUGR">
       <a name="label" val="BUG/BUGR"/>
     </comp>
-    <comp loc="(400,190)" name="BGE/BGER">
-      <a name="label" val="BGE/BGER"/>
-    </comp>
     <comp lib="6" loc="(955,766)" name="Text">
       <a name="text" val="RTI"/>
-    </comp>
-    <comp lib="2" loc="(930,460)" name="Multiplexer">
-      <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(230,240)" name="Pin">
       <a name="width" val="16"/>
@@ -2829,19 +2872,13 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
       <a name="tristate" val="false"/>
       <a name="label" val="Current Flags "/>
     </comp>
-    <comp loc="(400,420)" name="BULE/BULER">
-      <a name="label" val="BULE/BULER"/>
-    </comp>
     <comp loc="(400,350)" name="BG/BGR">
       <a name="label" val="BG/BGR"/>
     </comp>
-    <comp lib="1" loc="(900,190)" name="OR Gate"/>
     <comp lib="0" loc="(1060,810)" name="Clock"/>
-    <comp loc="(400,630)" name="BNZ/BNZR">
-      <a name="label" val="BNZ/BNZR"/>
-    </comp>
-    <comp loc="(400,50)" name="BR/BRR (Unconditional Branch)">
-      <a name="label" val="BR/BRR"/>
+    <comp lib="0" loc="(1130,480)" name="Constant">
+      <a name="width" val="16"/>
+      <a name="value" val="0x3"/>
     </comp>
     <comp lib="0" loc="(760,190)" name="Constant">
       <a name="width" val="4"/>
@@ -2868,36 +2905,15 @@ eb4d fb00 180b 3380 4203 3380 ed39 fd00
     <comp lib="3" loc="(800,230)" name="Comparator">
       <a name="width" val="4"/>
     </comp>
-    <comp lib="3" loc="(870,440)" name="Adder">
-      <a name="width" val="16"/>
-    </comp>
     <comp lib="2" loc="(600,80)" name="BitSelector">
       <a name="width" val="16"/>
       <a name="group" val="4"/>
-    </comp>
-    <comp lib="0" loc="(230,160)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Contents of Rb "/>
-    </comp>
-    <comp lib="0" loc="(230,80)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Op Code "/>
     </comp>
     <comp loc="(400,120)" name="BL/BLR">
       <a name="label" val="BL/BLR"/>
     </comp>
     <comp loc="(400,770)" name="BNC/BNCR">
       <a name="label" val="BNC/BNCR"/>
-    </comp>
-    <comp lib="0" loc="(590,110)" name="Constant">
-      <a name="width" val="2"/>
-      <a name="value" val="0x2"/>
-    </comp>
-    <comp lib="0" loc="(680,190)" name="Constant">
-      <a name="width" val="2"/>
-      <a name="value" val="0x3"/>
     </comp>
     <comp lib="2" loc="(580,470)" name="Multiplexer">
       <a name="select" val="4"/>
