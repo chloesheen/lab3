@@ -58,6 +58,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="labelloc" val="east"/>
     </tool>
     <tool lib="1" name="NOT Gate">
+      <a name="facing" val="south"/>
       <a name="size" val="20"/>
     </tool>
     <tool lib="1" name="AND Gate">
@@ -327,6 +328,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="6" loc="(263,787)" name="Text">
       <a name="text" val="Keyboard 1"/>
     </comp>
+    <comp lib="6" loc="(476,24)" name="Text">
+      <a name="text" val="CS356: Concurrency &amp; Co-Design"/>
+    </comp>
+    <comp lib="6" loc="(471,40)" name="Text">
+      <a name="text" val="Team Blue"/>
+    </comp>
     <comp lib="6" loc="(645,513)" name="Text">
       <a name="text" val="Register File"/>
     </comp>
@@ -500,18 +507,18 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="addrWidth" val="16"/>
       <a name="dataWidth" val="16"/>
       <a name="contents">addr/data: 16 16
-eb32 fb00 100b 9720 e910 f900 3068 b079
-eb1b fb00 180b e101 f100 ed44 fd00 20cd
-3068 b020 eb19 fb00 1c0b ed47 fd00 20cd
-0 2300 0 e400 f4d0 e100 f100 ed44
-fd00 20cd 4304 3380 a543 6205 6304 e60a
-f600 3068 b026 eb36 fb00 180b eb1d fb00
-100b 0 eb32 fb00 100b 0 e100 f100
-e200 f2d0 ed4a fd00 20cd e200 f2d0 6002
-ed19 fd00 20cd 0 2c12 21cd 0 2812
-21cd 0 99c0 9ad0 9320 4403 eb5b fb00
-180b 3380 4203 3380 ed47 fd00 20cd 34c0
-eb52 fb00 190b 219a
+eb35 fb00 100b 9720 e910 f900 3068 b079
+eb1e fb00 180b e101 f100 ed47 fd00 20cd
+3068 b020 eb1c fb00 1c0b ed4a fd00 20cd
+ed1c fd00 20cd 0 2300 0 e400 f4d0
+e100 f100 ed47 fd00 20cd 4304 3380 a543
+6205 6304 e60a f600 3068 b026 eb39 fb00
+180b eb20 fb00 100b 0 eb35 fb00 100b
+0 e100 f100 e200 f2d0 ed4d fd00 20cd
+e200 f2d0 6002 ed1c fd00 20cd 0 2c12
+21cd 0 2812 21cd 0 99c0 9ad0 9320
+4403 eb5e fb00 180b 3380 4203 3380 ed4a
+fd00 20cd 34c0 eb55 fb00 190b 219a
 </a>
     </comp>
     <comp lib="6" loc="(874,902)" name="Text">
@@ -523,9 +530,6 @@ eb52 fb00 190b 219a
       <a name="radix" val="16"/>
     </comp>
     <comp loc="(320,310)" name="Branching Control"/>
-    <comp lib="6" loc="(468,30)" name="Text">
-      <a name="text" val="SINGLE-CYCLE MICROPROCESSOR (SECOND APPROXIMATION)"/>
-    </comp>
     <comp lib="6" loc="(603,565)" name="Text">
       <a name="text" val="RD 123"/>
     </comp>
@@ -2241,7 +2245,6 @@ eb52 fb00 190b 219a
     </appear>
     <wire from="(410,280)" to="(470,280)"/>
     <wire from="(340,150)" to="(340,220)"/>
-    <wire from="(230,210)" to="(350,210)"/>
     <wire from="(390,210)" to="(510,210)"/>
     <wire from="(520,290)" to="(560,290)"/>
     <wire from="(230,240)" to="(340,240)"/>
@@ -2253,40 +2256,47 @@ eb52 fb00 190b 219a
     <wire from="(190,210)" to="(190,240)"/>
     <wire from="(430,100)" to="(520,100)"/>
     <wire from="(660,100)" to="(660,140)"/>
+    <wire from="(510,280)" to="(530,280)"/>
     <wire from="(500,290)" to="(520,290)"/>
     <wire from="(340,240)" to="(340,280)"/>
     <wire from="(520,100)" to="(530,100)"/>
     <wire from="(340,220)" to="(350,220)"/>
     <wire from="(390,110)" to="(400,110)"/>
+    <wire from="(230,210)" to="(310,210)"/>
     <wire from="(190,210)" to="(200,210)"/>
-    <wire from="(510,210)" to="(510,270)"/>
-    <wire from="(550,270)" to="(560,270)"/>
+    <wire from="(480,180)" to="(480,230)"/>
     <wire from="(560,100)" to="(570,100)"/>
     <wire from="(600,100)" to="(610,100)"/>
     <wire from="(750,120)" to="(750,130)"/>
     <wire from="(510,210)" to="(760,210)"/>
+    <wire from="(510,210)" to="(510,280)"/>
     <wire from="(570,130)" to="(750,130)"/>
     <wire from="(340,230)" to="(340,240)"/>
+    <wire from="(310,180)" to="(480,180)"/>
+    <wire from="(480,250)" to="(480,270)"/>
     <wire from="(570,100)" to="(570,130)"/>
     <wire from="(170,290)" to="(470,290)"/>
     <wire from="(600,70)" to="(600,100)"/>
     <wire from="(170,90)" to="(400,90)"/>
     <wire from="(520,70)" to="(520,100)"/>
+    <wire from="(310,180)" to="(310,210)"/>
+    <wire from="(310,210)" to="(350,210)"/>
     <wire from="(600,110)" to="(600,280)"/>
     <wire from="(640,100)" to="(660,100)"/>
     <wire from="(410,120)" to="(410,280)"/>
     <wire from="(780,110)" to="(810,110)"/>
-    <wire from="(510,270)" to="(530,270)"/>
     <wire from="(660,100)" to="(750,100)"/>
     <wire from="(170,210)" to="(190,210)"/>
     <wire from="(520,110)" to="(530,110)"/>
-    <wire from="(520,110)" to="(520,290)"/>
     <wire from="(340,230)" to="(350,230)"/>
+    <wire from="(520,110)" to="(520,290)"/>
     <wire from="(390,140)" to="(660,140)"/>
     <wire from="(190,240)" to="(200,240)"/>
     <wire from="(520,70)" to="(600,70)"/>
+    <wire from="(480,270)" to="(560,270)"/>
     <wire from="(540,150)" to="(620,150)"/>
     <wire from="(340,150)" to="(540,150)"/>
+    <wire from="(550,280)" to="(560,280)"/>
     <wire from="(590,280)" to="(600,280)"/>
     <wire from="(340,280)" to="(410,280)"/>
     <wire from="(600,110)" to="(610,110)"/>
@@ -2301,14 +2311,21 @@ eb52 fb00 190b 219a
       <a name="label" val="SWI"/>
     </comp>
     <comp lib="4" loc="(390,210)" name="S-R Flip-Flop"/>
-    <comp lib="6" loc="(419,187)" name="Text">
+    <comp lib="6" loc="(430,503)" name="Text">
       <a name="text" val="Maybe this can't be on the falling edge"/>
     </comp>
     <comp lib="0" loc="(370,240)" name="Constant">
       <a name="facing" val="north"/>
     </comp>
+    <comp lib="1" loc="(480,250)" name="NOT Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="20"/>
+    </comp>
     <comp lib="6" loc="(223,321)" name="Text">
       <a name="text" val="Enable Register File?"/>
+    </comp>
+    <comp lib="1" loc="(550,280)" name="NOT Gate">
+      <a name="size" val="20"/>
     </comp>
     <comp lib="2" loc="(780,110)" name="Multiplexer">
       <a name="width" val="16"/>
@@ -2325,7 +2342,7 @@ eb52 fb00 190b 219a
     </comp>
     <comp lib="1" loc="(590,280)" name="AND Gate">
       <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
+      <a name="inputs" val="3"/>
     </comp>
     <comp lib="0" loc="(170,290)" name="Pin">
       <a name="tristate" val="false"/>
@@ -2338,6 +2355,7 @@ eb52 fb00 190b 219a
     </comp>
     <comp lib="4" loc="(640,100)" name="Register">
       <a name="width" val="16"/>
+      <a name="trigger" val="falling"/>
     </comp>
     <comp lib="0" loc="(810,110)" name="Pin">
       <a name="facing" val="west"/>
@@ -2347,13 +2365,16 @@ eb52 fb00 190b 219a
       <a name="labelloc" val="east"/>
     </comp>
     <comp loc="(230,240)" name="Return from Interrupt?"/>
-    <comp lib="1" loc="(550,270)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
     <comp lib="0" loc="(170,90)" name="Pin">
       <a name="width" val="16"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Set Value"/>
+    </comp>
+    <comp lib="6" loc="(211,411)" name="Text">
+      <a name="text" val="this was falling edge so the shadow register can correctly save the PC "/>
+    </comp>
+    <comp lib="6" loc="(177,429)" name="Text">
+      <a name="text" val="otherwise, pc gets NEXT value rather than current"/>
     </comp>
   </circuit>
   <circuit name="Shadow Flags">
