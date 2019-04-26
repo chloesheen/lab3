@@ -1,3 +1,5 @@
+### Sujin Kay, Chloe Sheen, Lamiaa Dakir, Matthew Soulanille, Katherine Wu
+
 See the second half of this document for details on the overall microprocessor from Lab 4. This section is just to explain what we added for Lab 6.
 -----------------------------------------------------------------------------------------------------------------------------
 Lab 6 HARDWARE
