@@ -44,13 +44,13 @@ LABEL(Print_the_string)
 LABEL(Return_From_Interrupt)
 RTI()
 
-SET(R3, 70)
-OPCODE(0b0010100000000011)
 
 //---------Main body of program-----------
 LABEL(Program_Start)
 BR(Program_Start)
 
+
+//---------Function Definitions-----------
 //register 1 which terminal
 //returns to register 2
 LABEL(getchar_ord)
